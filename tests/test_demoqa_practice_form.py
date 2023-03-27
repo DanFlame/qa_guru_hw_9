@@ -13,7 +13,7 @@ def test_positive_fill_practice_form():
                 birth_day=25,
                 subject='Computer Science',
                 hobby='Music',
-                picture='resources/picture.PNG',
+                picture='picture.PNG',
                 address='Indo st. 10',
                 state='Uttar Pradesh',
                 city='Agra'
