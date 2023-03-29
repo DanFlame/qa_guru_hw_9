@@ -11,10 +11,7 @@ class PracticeForm:
         pass
 
     def page_open(self):
-        browser.open('/automation-practice-form')
-        return self
-
-    def remove_ads(self):
+        browser.open('https://demoqa.com/automation-practice-form')
         browser.all('[id^=google_ads][id$=container__]').with_(timeout=3).wait_until(
             have.size_greater_than_or_equal(3)
         )

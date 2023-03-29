@@ -10,7 +10,7 @@ from allure_commons.types import Severity
 @allure.feature('Practice form')
 @allure.description('We should check that all fields completed correctly')
 @allure.story('Practice form completion with valid data')
-def test_positive_fill_practice_form():
+def test_positive_fill_practice_form(setup_chrome):
     user = User(first_name='Daniel',
                 last_name='Fazylov',
                 email='daniel@test.ru',
@@ -29,8 +29,6 @@ def test_positive_fill_practice_form():
 
     with allure.step('Open practice form'):
         practice_form.page_open()
-    with allure.step('Ads removing'):
-        practice_form.remove_ads()
 
     with allure.step('Data entering'):
         practice_form.fill_data(user)
