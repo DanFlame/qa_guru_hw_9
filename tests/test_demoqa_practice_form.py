@@ -21,7 +21,7 @@ def test_positive_fill_practice_form(setup_chrome):
                 birth_day=25,
                 subject='Computer Science',
                 hobby='Music',
-                picture='picture.PNG',
+                picture='picture.png',
                 address='Indo st. 10',
                 state='Uttar Pradesh',
                 city='Agra'
