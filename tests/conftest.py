@@ -2,9 +2,7 @@ import pytest
 from demoqa_tests.utils import attach
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import Browser, Config
-
-DEFAULT_BROWSER_VERSION = "100.0"
+from selene.support.shared import browser
 
 
 @pytest.fixture(scope='function')
@@ -24,7 +22,9 @@ def setup_chrome():
         command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    browser = Browser(Config(driver))
+    browser.config.driver = driver
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
 
     yield browser
     attach.add_screenshot(browser)
